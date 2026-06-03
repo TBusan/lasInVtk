@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "MinGW GCC",
+            "compilerPath": "D:/Programs/mingw64/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
+            "includePath": [
+                "${workspaceFolder}/src"
+            ]
+        }
+    ],
+    "version": 4
+}
