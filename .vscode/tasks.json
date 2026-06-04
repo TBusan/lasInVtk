@@ -7,27 +7,24 @@
         {
             "label": "CMake Configure",
             "type": "shell",
-            "command": "cmake",
-            "args": [
-                "-B", "build",
-                "-G", "MinGW Makefiles",
-                "-DCMAKE_BUILD_TYPE=Debug"
-            ],
+            "command": "${workspaceFolder}/build_msvc.bat",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
         {
             "label": "CMake Build",
             "type": "shell",
-            "command": "cmake",
-            "args": [
-                "--build", "build"
-            ],
+            "command": "${workspaceFolder}/build_msvc.bat",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": "$gcc",
-            "dependsOn": "CMake Configure"
+            "problemMatcher": "$msCompile"
         }
     ]
 }

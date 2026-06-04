@@ -1,4 +1,5 @@
 #include "gpr_dataset.h"
+#include "gpr_vtk_renderer.h"
 #include <iostream>
 #include <exception>
 
@@ -13,6 +14,9 @@ int main(int argc, char* argv[]) {
         GprDatasetLoader loader;
         GprDataset dataset = loader.load(argv[1]);
         dataset.printSummary();
+
+        GprVtkRenderer renderer;
+        renderer.render(dataset);
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;

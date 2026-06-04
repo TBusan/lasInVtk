@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_BUILD_TYPE Release)
 endif()
 
 if(MSVC)
@@ -15,5 +15,23 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# VTK
+find_package(VTK
+    COMPONENTS
+        CommonCore
+        CommonDataModel
+        RenderingCore
+        RenderingOpenGL2
+        InteractionStyle
+        ImagingCore
+    HINTS "D:/VTK/lib/cmake/vtk-9.5"
+    REQUIRED
+)
+
 add_subdirectory(src)
 add_subdirectory(app)
+
+vtk_module_autoinit(
+    TARGETS gpr_demo
+    MODULES ${VTK_LIBRARIES}
+)

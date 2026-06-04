@@ -3,15 +3,12 @@
     "configurations": [
         {
             "name": "Debug gpr_demo",
-            "type": "cppdbg",
+            "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/app/gpr_demo.exe",
             "args": ["testData/华明路_001_A01"],
             "cwd": "${workspaceFolder}/build/app",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "D:/Programs/mingw64/bin/gdb.exe",
             "preLaunchTask": "CMake Build"
         }
     ]
